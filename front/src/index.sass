@@ -1,0 +1,89 @@
+@charset "utf-8"
+@import "./fonts/fontawesome/scss/fontawesome.scss"
+@import "./fonts/fontawesome/scss/solid.scss"
+@import "./fonts/fontawesome/scss/brands.scss"
+
+// Customization
+
+// You can easily customize Bulma with your own variables.
+// Just uncomment the following block to see the result.
+
+// 1. Import the initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables"
+// 2. Set your own initial variables
+$grey: #758FA5
+$grey-invert: #ffffff
+// Update the sans-serif font family
+$family-sans-serif: "Helvetica", "Arial", sans-serif
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $grey
+$primary-invert: $grey-invert
+$secondary: #A7B7C5
+$light-secondary: #F2F4F6
+// 4. Import the rest of Bulma
+
+@import "../node_modules/bulma/bulma"
+
+// 5. Other custom classes and id
+.is-fullscreen
+  height: 100vh !important
+  width: 100vw !important
+  display: flex
+  box-sizing: border-box
+
+.is-centered-flex
+  display: flex !important
+  justify-content: center
+  align-items: center
+
+.is-column-flex
+  flex-flow: column
+
+#left-nav
+  height: 100vh !important
+  width: 100px !important
+  display: flex
+  flex-flow: column
+  box-sizing: border-box
+  flex-shrink: 0
+  background-color: $secondary
+
+#left-nav-header
+  display: flex !important
+  justify-content: center
+  align-items: center
+  height: 70px !important
+  width: 100% !important
+  flex-shrink: 0
+
+#left-nav-content
+  height: 100% !important
+  width: 100% !important
+  display: flex !important
+  flex-flow: column
+  align-items: center
+  padding: 1rem 0 1rem 0
+  background-color: $light-secondary
+
+.is-left-nav-item
+  margin: 1rem 0 1rem 0
+  padding-left: 0.2rem
+  padding-right: 0.2rem
+  width: 60px !important
+  height: 60px !important
+
+.is-left-nav-header-item
+  padding-left: 0.2rem
+  padding-right: 0.2rem
+  width: 45px !important
+  height: 45px !important
+
+.button-card
+  min-width: 350px !important
+  min-height: 100px !important
+  margin: 1rem
+  font-size: 2rem
+
+.button-card > i
+  margin-right: 1.5rem
