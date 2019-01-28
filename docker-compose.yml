@@ -1,42 +1,5 @@
 version: '3'
 services:
-
-  prisma:
-    image: prismagraphql/prisma:1.11
-    restart: always
-    ports:
-    - "4466:4466"
-    environment:
-      PRISMA_CONFIG: |
-        port: 4466
-        # uncomment the next line and provide the env var PRISMA_MANAGEMENT_API_SECRET=my-secret to activate cluster security
-        managementApiSecret: summus
-        databases:
-          default:
-            connector: postgres
-            host: postgres
-            port: 5432
-            user: prisma
-            password: prisma
-            migrations: true
-
-  postgres:
-    image: postgres
-    restart: always
-    environment:
-      POSTGRES_USER: prisma
-      POSTGRES_PASSWORD: prisma
-    volumes:
-      - postgres:/var/lib/postgresql/data
-
-  back:
-    build: ./back
-    ports:
-      - "4000:4000"
-    volumes:
-      - "./back/database:/app/database"
-      - "./back/src:/app/src"
-
   front:
     build: ./front
     ports:
@@ -44,6 +7,3 @@ services:
     volumes:
       - "./front/src:/app/src"
       - "./front/public:/app/public"
-
-volumes:
-  postgres:
